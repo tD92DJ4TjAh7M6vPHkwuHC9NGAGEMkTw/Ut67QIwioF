@@ -33,7 +33,6 @@ jobs:
         run: |
           git config --global core.compression 0
           git config --global http.postBuffer 1073741824  # 1GB buffer
-          git config --global core.fsync false  # Skip fsync in CI
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,16 +42,16 @@ jobs:
           fetch-tags: false  # Skip tags to reduce fetch size
           show-progress: false  # Hide progress logs for minor I/O savings
           # Partial clone: Fetch structure only, blobs (files) on-demand during upload
-          extraArgs: --filter=blob:none
-          # Sparse checkout: Fetch only static essentials (paths enable sparse mode; adjust as needed)
+          filter: blob:none
+          # Sparse checkout: Fetch only static essentials (adjust paths as needed)
           sparse-checkout-cone-mode: true
           sparse-checkout: |  # Multiline paths: Enables sparse + lists files/dirs (omits bloat like node_modules/)
-            *                   # All root files
-            .github/            # Workflows (if needed)
+            *
+            .github/
             *.html
             *.css
             *.js
-            assets/             # Or your static dir
+            assets/
             css/
             js/
             img/
