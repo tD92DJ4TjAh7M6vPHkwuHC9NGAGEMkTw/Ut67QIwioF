@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--===== Required meta tags =====-->
+  <meta name="keywords" content="Frith Hilton, music, albums, Valence Eve, Fresh Player, Frith Hilton's latest album, whereIsTheMoodRobot">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Fresh Player | Frith Hilton">
+  <meta property="og:description" content="Stream Frith Hilton's music albums and tracks on Fresh Player.">
+  <meta property="og:image" content="https://www.frithhilton.com.ng/images/logo.png">
+  <meta property="og:url" content="https://www.frithhilton.com.ng/pages/freshPlayer.html">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Frith Hilton" />
+  <meta name="description" content="Stream Frith Hilton's music albums and tracks on Fresh Player." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <script src="https://www.frithhilton.com.ng/js/inject-for-bots.js" async></script>
+  
+  <style>
+    #seo-content {
+      display: none;
+    }
+  </style>
+  
+  
+  <!--===== Title =====-->
+  <title>Fresh Player | Frith Hilton</title>
+  
+  <!--===== Favicon =====-->
+  <link rel="shortcut icon" href="https://www.frithhilton.com.ng/images/favicon.png" />
+  
+  <!--===== Google fonts =====-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Jost:wght@300;400;500;600;700;800;900&display=swap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+  <!-- font-awesome-icons -->
+  <script src="https://kit.fontawesome.com/c7fbb1b458.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/dompurify@3.1.6/dist/purify.min.js"></script>
+  
+  
+  <!--===== Global bootstrap required css =====-->
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/bootstrap/bootstrap.min.css" />
+  <!--===== Global styles including: Font Icons, Plugins, etc =====-->
+  <link rel="stylesheet" type="text/css" href="https://www.frithhilton.com.ng/css/font-awesome/all.min.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/feather/iconfont.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/simple-line-icons/simple-line-icons.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/themify-icons/themify-icons.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/pe-icon-stroke/Pe-icon-7-stroke.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/magnific-popup/magnific-popup.css" />
+  
+  <!--===== Main theme css =====-->
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/style.css" />
+  <link rel="stylesheet" href="https://www.frithhilton.com.ng/css/freshPlayer.css" />
+  <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"></script>
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  
+  <style>
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Unchanged, already black-based */
+      z-index: 9999;
+    }
+    
+    .image-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    .image-container img {
+      width: 85vw;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      /* Unchanged, already black-based */
+      object-fit: contain;
+    }
+    
+    .spaceOutText {
+      letter-spacing: 4px;
+    }
+    
+    .mainContainer {
+      background: rgba(255, 255, 255, 0.95);
+      /* White with slight transparency */
+      backdrop-filter: blur(20px);
+      height: 450px;
+      width: 450px;
+      border-radius: 25px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      /* Slightly darker shadow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px;
+      margin: 20px auto;
+      overflow: visible;
+    }
+    
+    .mainContainer .album {
+      height: 220px;
+      width: 220px;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      /* Darker grayscale shadow */
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+      z-index: 50;
+    }
+    
+    .mainContainer .album:active {
+      cursor: grabbing;
+    }
+    
+    .mainContainer .album::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      /* Unchanged, already white */
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      /* Darker grayscale shadow */
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .mainContainer .album img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    
+    .mainContainer .songContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      margin-top: 240px;
+    }
+    
+    .mainContainer .songDetails {
+      opacity: 0;
+      transform: translateY(20px);
+      text-align: center;
+      margin-top: 50px;
+      z-index: 30;
+    }
+    
+    .mainContainer .songName {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000000;
+      /* Changed from #2d3748 to pure black */
+      margin-bottom: 4px;
+    }
+    
+    .mainContainer .artists {
+      font-size: 14px;
+      color: #666666;
+      /* Changed from #718096 to medium gray */
+      font-weight: inherit;
+    }
+    
+    .mainContainer .seekBarContainer {
+      margin: 25px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      width: 100%;
+      z-index: 10;
+    }
+    
+    .mainContainer .seekBar {
+      width: 100%;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.2);
+      /* Slightly darker gray */
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .mainContainer .seekProgress {
+      height: 100%;
+      background: #000000;
+      /* Changed to pure black */
+      width: 0;
+      border-radius: 2px;
+      position: relative;
+    }
+    
+    .mainContainer .seekHandle {
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: #ffffff;
+      /* Unchanged, already white */
+      border: 2px solid #000000;
+      /* Unchanged, already black */
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      /* Darker grayscale shadow */
+      opacity: 1;
+      transition: transform 0.2s ease;
+    }
+    
+    .mainContainer .seekBarContainer:hover .seekHandle {
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .mainContainer .seekHandle:active {
+      transform: translateY(-50%) scale(1.2);
+    }
+    
+    .mainContainer .timeDisplay {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666666;
+      /* Changed from #718096 to medium gray */
+      margin-top: 8px;
+      width: 100%;
+    }
+    
+    .mainContainer .playerControls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .mainContainer .control-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .mainContainer .control-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+      /* Lighter gray hover effect */
+    }
+    
+    .mainContainer #playPauseBtn {
+      color: #000000;
+      /* Changed to pure black */
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      /* Changed to grayscale shadow */
+    }
+    
+    .mainContainer #playPauseBtn:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      /* Darker grayscale shadow */
+    }
+    
+    .mainContainer #playPauseBtn svg {
+      fill: #000000;
+      /* Changed to pure black */
+      stroke: #000000;
+      /* Changed to pure black */
+    }
+    
+    .mainContainer .spinIndicator {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #333333;
+      /* Changed from #667eea to dark gray */
+      opacity: 0;
+      pointer-events: none;
+      z-index: 60;
+    }
+    
+    @media (max-width: 480px) {
+      .mainContainer {
+        width: 90%;
+        height: 430px;
+        margin: 20px auto;
+      }
+      
+      .mainContainer .album {
+        height: 200px;
+        width: 200px;
+        top: 15px;
+      }
+      
+      .mainContainer .songContainer {
+        margin-top: 220px;
+      }
+      
+      .mainContainer .songDetails {
+        margin-top: 40px;
+        z-index: 30;
+      }
+      
+      .mainContainer .seekBarContainer {
+        margin: 20px 0;
+      }
+      
+      .mainContainer .spinIndicator {
+        top: 10px;
+      }
+    }
+    
+    #track-loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      /* Unchanged, already black-based */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      pointer-events: auto;
+    }
+    
+    .track-loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .content {
+      width: 30vmin;
+      height: 30vmin;
+      perspective: 100vmin;
+      animation: spin-all 4s ease-in-out infinite;
+    }
+    
+    .content .cube,
+    .content .cube::after,
+    .content .cube::before {
+      animation: spin-cube 2s ease-in-out -3s infinite alternate;
+    }
+    
+    .content .cube::after,
+    .content .cube::before {
+      position: absolute;
+      content: "";
+      background: #ffffff;
+      /* Changed to pure white */
+      width: calc(100% - 2vmin);
+      height: calc(100% - 2vmin);
+      border-radius: 2vmin;
+      transform: rotateY(-90deg);
+      transform-origin: right bottom;
+      top: 2.5vmin;
+      left: 4vmin;
+      transition: all 1s ease 0s;
+      animation-name: spin-cube-before;
+    }
+    
+    .content .cube {
+      background: #ffffff;
+      /* Changed to pure white */
+      width: 20vmin;
+      height: 20vmin;
+      border-radius: 2vmin;
+      transform: rotate(48deg) rotateX(22.5deg) rotateY(-22.5deg);
+      left: 5vmin;
+      position: absolute;
+      top: 5vmin;
+      transition: all 1s ease 0s;
+      transform-style: preserve-3d;
+    }
+    
+    .content .cube::after {
+      top: 4vmin;
+      left: 2.5vmin;
+      transform: rotateX(90deg);
+      animation-name: spin-cube-after;
+    }
+    
+    @keyframes spin-all {
+      
+      50%,
+      100% {
+        transform: rotate(720deg);
+      }
+    }
+    
+    @keyframes spin-cube {
+      
+      0%,
+      50% {
+        border-radius: 100%;
+        transform: rotate(39deg) rotateX(0deg) rotateY(0deg);
+        left: 10vmin;
+        top: 10vmin;
+        width: 10vmin;
+        height: 10vmin;
+      }
+      
+      50%,
+      100% {
+        border-radius: 2vmin;
+        transform: rotate(48deg) rotateX(22.5deg) rotateY(-22.5deg);
+        left: 5vmin;
+        top: 5vmin;
+        width: 20vmin;
+        height: 20vmin;
+      }
+    }
+    
+    @keyframes spin-cube-before {
+      
+      0%,
+      50% {
+        border-radius: 100%;
+        transform: rotateY(-180deg) rotateX(0deg);
+        left: 11vmin;
+        top: 9vmin;
+        width: 100%;
+        height: 100%;
+      }
+      
+      50%,
+      100% {
+        border-radius: 2vmin;
+        transform: rotateY(-90deg);
+        left: 4vmin;
+        top: 2.5vmin;
+        width: calc(100% - 2vmin);
+        height: calc(100% - 2vmin);
+      }
+    }
+    
+    @keyframes spin-cube-after {
+      
+      0%,
+      50% {
+        border-radius: 100%;
+        transform: rotateY(0deg) rotateX(180deg);
+        left: 5vmin;
+        top: 12vmin;
+        width: 100%;
+        height: 100%;
+      }
+      
+      50%,
+      100% {
+        border-radius: 2vmin;
+        transform: rotateX(90deg);
+        left: 2.5vmin;
+        top: 4vmin;
+        width: calc(100% - 2vmin);
+        height: calc(100% - 2vmin);
+      }
+    }
+    
+    .lyrics-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+    
+    .lyrics-container {
+      overflow-y: auto;
+      padding: 10px;
+      border-radius: 5px;
+      background: #ffffff;
+      /* Changed to pure white */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      /* Darker grayscale shadow */
+      width: 100%;
+      max-height: 400px;
+    }
+    
+    .lyrics-content {
+      position: relative;
+    }
+    
+    .form-check.form-switch {
+      position: static !important;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .form-check.form-switch.floating-toggle {
+      position: fixed !important;
+      top: 30px;
+      right: 20px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+    
+    @media (max-width: 480px) {
+      .form-check.form-switch.floating-toggle {
+        top: 22px;
+        right: 10px;
+      }
+    }
+    
+    .lyric-line {
+      padding: 5px 0;
+      font-size: 16px;
+      color: #000000;
+      /* Changed from #2d3748 to pure black */
+      transition: background-color 0.3s ease, font-weight 0.3s ease;
+    }
+    
+    .lyric-line.highlight {
+      background-color: rgba(0, 0, 0, 0.1);
+      /* Changed to light gray */
+      font-weight: 600;
+      border-radius: 3px;
+      padding: 5px 8px;
+    }
+    
+    .form-check-input {
+      cursor: pointer;
+      width: 40px;
+      height: 20px;
+      background-color: #666666;
+      /* Changed from #718096 to medium gray */
+      border: none;
+    }
+    
+    .form-check-input:checked {
+      background-color: #333333;
+      /* Changed from #667eea to dark gray */
+    }
+    
+    .form-check-label {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #000000;
+      /* Changed from #2d3748 to pure black */
+      font-weight: 500;
+    }
+    
+    .lyrics-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .lyrics-container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      /* Unchanged, already grayscale */
+      border-radius: 4px;
+    }
+    
+    .lyrics-container::-webkit-scrollbar-thumb {
+      background: #333333;
+      /* Changed from #667eea to dark gray */
+      border-radius: 4px;
+    }
+    
+    .lyrics-container::-webkit-scrollbar-thumb:hover {
+      background: #1a1a1a;
+      /* Slightly darker gray for hover */
+    }
+    
+    @media (max-width: 480px) {
+      .lyrics-container {
+        max-height: 300px;
+      }
+      
+      .lyric-line {
+        font-size: 14px;
+      }
+      
+      .form-check-label {
+        font-size: 14px;
+      }
+    }
+    
+    
+    .playlists-container {
+      margin-bottom: 2rem;
+    }
+    
+    .playlists-container h1 {
+      font-size: 2rem;
+      color: #000000;
+      margin-bottom: 1.5rem;
+    }
+    
+    .badges-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .badge {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background-color: #6c757d;
+      /* Bootstrap secondary */
+      color: #fff;
+      border-radius: 1rem;
+      transition: background-color 0.2s;
+    }
+    
+    .badge:hover {
+      background-color: #5a6268;
+    }
+    
+    .badge.active {
+      background-color: var(--primary-color);
+      /* Matches .text-primary */
+    }
+    
+    .favourite-btn {
+      font-size: 1.2rem;
+      line-height: 1;
+      padding: 0.25rem 0.5rem;
+      border-radius: 50%;
+    }
+    
+    .favourite-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .track-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    
+    .track-item.highlighted {
+      background-color: rgba(0, 0, 0, 0.1);
+      font-weight: 600;
+    }
+  </style>
+  
+</head>
+
+<body id="ctrlArea">
+  <!--========== 
+        Start of loader ==========-->
+  
+  <div class="template-loader">
+    <div class="loaderCenter">
+      <div class="book">
+        <div class="book__pg-shadow"></div>
+        <div class="book__pg"></div>
+        <div class="book__pg book__pg--2"></div>
+        <div class="book__pg book__pg--3"></div>
+        <div class="book__pg book__pg--4"></div>
+        <div class="book__pg book__pg--5"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div v-show="store.getView() === 'div1'">
+    
+    <!--========== 
+    Start of  cookie modal notification section ==========-->
+    <div class="modal-subscribe">
+      <!-- Modal -->
+      <div class="modal fade" data-bs-backdrop="static" id="myModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body p-0 bg-secondary rounded">
+              <div class="p-5 text-center">
+                <img class="img-fluid px-5" src="https://www.frithhilton.com.ng/images/svg/cookie.svg" alt="Cookies Policy Image" />
+                <h3>Cookies</h3>
+                <p class="text-dark"><b>Hilton</b> uses cookies to enhance user experience</p>
+                <a href="cookies.html" class="text-primary-gradient fw-bold">Our policy</a>
+                <div class="d-grid mt-5">
+                  <button type="button" class="btn btn-white rounded" data-bs-dismiss="modal" @click="store.acceptCookieUse()">Accept</button>
+                  <p class="text-dark mt-4">
+                    Coupled with
+                    <svg class="logo" viewBox="0 0 128 128" width="24" height="24" data-v-53ccc107="">
+                      <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-53ccc107=""></path>
+                      <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-53ccc107=""></path>
+                    </svg>
+                    <a href="https://github.com/vuejs/petite-vue" target="_blank" style="color: #42b883;"><b>petite-vue</b></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--========== 
+          End of cookie modal notification section ==========-->
+    <!--==========-->
+    <!--==========-->
+    
+    <!--========== 
+        Start of Header Section ==========-->
+    
+    <header class="header">
+      <!--===== Start of navbar =====-->
+      <nav class="navbar navbar-light navbar-expand-lg navbar-default">
+        
+        <div class="container-fluid">
+          <!--===== Start of logo =====-->
+          <a class="navbar-brand" href="https://www.frithhilton.com.ng/index.html"><img class="logo" src="https://www.frithhilton.com.ng/images/logo.png" alt="Frith Hilton Logo" /></a>
+          <!--===== End of logo =====-->
+          
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar top-bar mt-0"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+          
+          <!--===== Start of nav =====-->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.frithhilton.com.ng/index.html"><span class="text-line"> Home </span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.frithhilton.com.ng/published/books.html">
+                  <span class="text-line"> Publications</span>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="upcoming.html"><span class="text-line"> Upcoming Poetry</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="freshPlayer.html"><span class="text-line"> Fresh Player </span></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="meet-Frith-Hilton-the-poet.html"><span class="text-line"> Meet Frith Hilton? </span></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.frithhilton.com.ng/cookies.html"><span class="text-line"> Cookies Policy </span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-icons list-unstyled mb-0 ms-auto"></div>
+          <!--===== End of nav =====-->
+        </div>
+      </nav>
+      <!--===== End of navbar =====-->
+    </header>
+    
+    <div class="mb-5">
+      <a target="_blank" href="https://www.samsung.com/us/smartphones/galaxy-z-flip6/">
+        <img class="img-fluid" src="https://www.frithhilton.com.ng/images/ads/designedBySamsungS8.png" alt="Samsung Galaxy Z Flip6 Advertisement">
+      </a>
+    </div>
+    
+    <div v-show="store.getInnerView() === 'div3'">
+      <!-- Album 17: sev.en.ton -->
+      <div class="gradient-item" @click="store.showAlbumTracks(17)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(17)" alt="sev.en.ton" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(17)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">sev.en.ton</h3>
+              <!-- <span role="button" disabled and tabindex="0" @click.stop.prevent="store.buyAlbum(17)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span> -->
+            </div>
+          </div>
+          <div :id="'album-' + 17" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 17"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 16: whereIsTheMoodRobot -->
+      <div class="gradient-item" @click="store.showAlbumTracks(16)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(16)" alt="whereIsTheMoodRobot" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(16)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">whereIsTheMoodRobot</h3>
+              <span role="button" disabled and tabindex="0" @click.stop.prevent="store.buyAlbum(16)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 16" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 16"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 15: Valence Eve -->
+      <div class="gradient-item" @click="store.showAlbumTracks(15)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(15)" alt="Valence Eve" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(15)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Valence Eve</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(15)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 15" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 15"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 14: Farther Memes -->
+      <div class="gradient-item" @click="store.showAlbumTracks(14)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(14)" alt="Farther Memes" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(14)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Farther Memes</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(14)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 14" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 14"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 13: the Sessions... -->
+      <div class="gradient-item" @click="store.showAlbumTracks(13)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(13)" alt="the Sessions..." crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(13)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">the Sessions...</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(13)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 13" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 13"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 12: it's pop -->
+      <div class="gradient-item" @click="store.showAlbumTracks(12)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(12)" alt="it's pop" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(12)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">it's pop</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(12)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 12" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 12"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 11: Troubadour -->
+      <div class="gradient-item" @click="store.showAlbumTracks(11)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(11)" alt="Troubadour" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(11)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Troubadour</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(11)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 11" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 11"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 10: Nightswan -->
+      <div class="gradient-item" @click="store.showAlbumTracks(10)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(10)" alt="Nightswan" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(10)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Nightswan</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(10)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 10" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 10"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 9: the Lover tap3 -->
+      <div class="gradient-item" @click="store.showAlbumTracks(9)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(9)" alt="the Lover tap3" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(9)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">the Lover tap3</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(9)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 9" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 9"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 8: lantern -->
+      <div class="gradient-item" @click="store.showAlbumTracks(8)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(8)" alt="lantern" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(8)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">lantern</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(8)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 8" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 8"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 7: Hilton -->
+      <div class="gradient-item" @click="store.showAlbumTracks(7)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(7)" alt="Hilton" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(7)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Hilton</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(7)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 7" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 7"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 6: Jacaranda -->
+      <div class="gradient-item" @click="store.showAlbumTracks(6)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(6)" alt="Jacaranda" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(6)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Jacaranda</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(6)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 6" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 6"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 5: screen time -->
+      <div class="gradient-item" @click="store.showAlbumTracks(5)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(5)" alt="screen time" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(5)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">screen time</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(5)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 5" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 5"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 4: Frith -->
+      <div class="gradient-item" @click="store.showAlbumTracks(4)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(4)" alt="Frith" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(4)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Frith</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(4)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 4" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 4"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 3: December 13 -->
+      <div class="gradient-item" @click="store.showAlbumTracks(3)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(3)" alt="December 13" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(3)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">December 13</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(3)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 3" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 3"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 2: Colourful Light -->
+      <div class="gradient-item" @click="store.showAlbumTracks(2)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(2)" alt="Colourful Light" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(2)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">Colourful Light</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(2)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 2" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 2"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Album 1: H.I.V -->
+      <div class="gradient-item" @click="store.showAlbumTracks(1)">
+        <div class="gradient-wrap">
+          <img :src="store.getAlbumCover(1)" alt="H.I.V" crossorigin="anonymous" />
+        </div>
+      </div>
+      <section class="py-4 bg-black">
+        <div class="container">
+          <div class="row justify-content-center" @click="store.showAlbumTracks(1)">
+            <div class="col-12 text-center">
+              <h3 class="text-white mb-5">H.I.V</h3>
+              <span role="button" tabindex="0" @click.stop.prevent="store.buyAlbum(1)" class="bg-light px-4 py-2 text-dark rounded">Buy Album</span>
+            </div>
+          </div>
+          <div :id="'album-' + 1" class="row justify-content-center mt-3" style="display: none;">
+            <div class="col-12 text-center">
+              <ul class="text-white list-unstyled album-track-list" :id="'track-list-' + 1"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <div id="div4" v-show="store.getInnerView() === 'div4'">
+      
+      <!-- Header -->
+      <header class="dynamic-header" id="dynamic-header">
+        <img src="https://www.frithhilton.com.ng/js/freshPlayer/img/FrithHiltonLogo.png" alt="Track Cover" id="track-cover" />
+        <div class="header-content mt-3">
+          <h1 class="h1" id="track-title">Play a record</h1>
+          <p class="h4"><span class="text-warning" id="album-name">Album</span></p>
+        </div>
+        <!-- Search Icon in Header -->
+        <img id="open-search-popup" src="https://www.frithhilton.com.ng/images/svg/search.svg" alt="Search" class="img-fluid search-icon-btn" />
+      </header>
+      
+      
+      
+      <!-- Search Popup -->
+      <div class="search-popup" id="search-popup">
+        <div class="search-popup-content">
+          <button class="close-btn" id="close-search-popup">×</button>
+          <h2 class="h4 text-primary">Search</h2>
+          <form id="search-form" autocomplete="off">
+            <input type="text" class="form-control search-input" placeholder="Search for tracks or albums..." id="search-input" autofocus />
+          </form>
+          <!-- Search Results Pane -->
+          <div class="search-results" id="search-results">
+            <!-- Results will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Audio Player Section -->
+            <div class="mainContainer" id="mainContainer">
+              <div class="album" id="albumArt">
+                <img :src="store.currentTrack.cover || 'https://www.frithhilton.com.ng/images/default.jpg'" alt="Album Cover" id="albumImg" />
+              </div>
+              <div class="spin-indicator" id="spinIndicator">
+              </div>
+              <div class="songContainer">
+                <div class="songDetails" id="songDetails">
+                  <p class="songName" id="songName">{{ store.currentTrack.name || 'No Track Selected' }}</p>
+                  <p class="artists" id="artists">{{ store.currentTrack.artist || 'Frith Hilton' }}</p>
+                </div>
+                <div class="seekBarContainer" id="seekBarContainer">
+                  <div class="seekBar" id="seekBar">
+                    <div class="seekProgress" id="seekProgress">
+                      <div class="seekHandle" id="seekHandle"></div>
+                    </div>
+                  </div>
+                  <div class="timeDisplay">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                  </div>
+                </div>
+                <div class="playerControls" id="playerControls">
+                  <button class="control-btn" id="prevBtn" @click="store.prevTrack">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="19 20 9 12 19 4 19 20" fill="black"></polygon>
+                      <line x1="5" y1="19" x2="5" y2="5" stroke="black"></line>
+                    </svg>
+                  </button>
+                  <button class="control-btn" id="playPauseBtn" @click="togglePlayPause">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" viewBox="0 0 24 24" stroke="black" stroke-width="2">
+                      <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                    </svg>
+                  </button>
+                  <button class="control-btn" id="nextBtn" @click="store.nextTrack">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="5 4 15 12 5 20 5 4" fill="black"></polygon>
+                      <line x1="19" y1="5" x2="19" y2="19" stroke="black"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Hidden audio element -->
+            <audio id="audioPlayer" preload="auto"></audio>
+            
+          </div>
+          <!-- Left Column: Credits -->
+          <div class="col-md-4">
+            <!-- Credits Section -->
+            <div class="credits bg-white p-4 rounded shadow mb-4">
+              <h2 class="h2 text-primary">Song Notes</h2>
+              <ul class="list-unstyled" id="credits-list" style="font-size: 19px;">
+                <li class="text-primary"><strong>Muse:</strong> <span id="credit-muse" class="text-dark">Muse</span></li>
+                <li class="text-primary"><strong>About:</strong> <span id="song-bio" class="text-dark" style="font-size: 16px;">About the song</span></li>
+                <li class="text-primary"><strong>Writer:</strong> <span id="credit-writer" class="text-dark">Frith Hilton</span></li>
+                <li class="text-primary"><strong>Label:</strong> <span id="credit-label" class="text-dark">Fresh Boy Chilling</span></li>
+                <li class="text-primary"><strong>Release Date:</strong> <span id="credit-release-date" class="text-dark">January 1, 2025</span></li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Right Column: Lyrics and Meet Frith Hilton? -->
+          <div class="col-md-8">
+            <!-- Lyrics Section -->
+            <section class="lyrics-content bg-white p-4 rounded shadow">
+              <div class="lyrics-header d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h2 text-primary">Lyrics</h2>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="lyricsFocusToggle" v-model="store.lyricsFocusEnabled">
+                  <label class="form-check-label text-dark" for="lyricsFocusToggle">
+                    <?xml version="1.0" ?>
+                    
+                    <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+                    
+                    <svg width="30px" height="30px" viewBox="0 0 32 32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    
+                      <g id="Icon">
+                        
+                        <path d="M18.003,23.922l-0.001,0c-1.105,0 -2.002,0.897 -2.002,2.002c-0,1.105 0.897,2.002 2.002,2.002c1.104,-0 2.001,-0.897 2.001,-2.002l0,-7.122c0,-0 6.001,-0.75 6.001,-0.75l0.003,3.867c-1.105,-0 -2.002,0.897 -2.002,2.002c0,1.104 0.897,2.001 2.002,2.001c1.105,0 2.002,-0.897 2.002,-2.001l-0.006,-7.003c0,-0.286 -0.123,-0.559 -0.338,-0.749c-0.215,-0.19 -0.501,-0.278 -0.786,-0.242l-8,1c-0.5,0.062 -0.876,0.488 -0.876,0.992l0,6.003Z" />
+                        
+                        <path d="M18.003,23.922l-0.001,0c-1.105,0 -2.002,0.897 -2.002,2.002c-0,1.105 0.897,2.002 2.002,2.002c1.104,-0 2.001,-0.897 2.001,-2.002l0,-7.122c0,-0 6.001,-0.75 6.001,-0.75l0.003,3.867c-1.105,-0 -2.002,0.897 -2.002,2.002c0,1.104 0.897,2.001 2.002,2.001c1.105,0 2.002,-0.897 2.002,-2.001l-0.006,-7.003c0,-0.286 -0.123,-0.559 -0.338,-0.749c-0.215,-0.19 -0.501,-0.278 -0.786,-0.242l-8,1c-0.5,0.062 -0.876,0.488 -0.876,0.992l0,6.003Z" />
+                        
+                        <path d="M27,12.994l0.009,-6.035c-0,-0.53 -0.211,-1.039 -0.586,-1.414c-0.375,-0.375 -0.884,-0.586 -1.414,-0.586c-4.185,0 -13.824,0 -18.009,0c-0.53,0 -1.039,0.211 -1.414,0.586c-0.375,0.375 -0.586,0.884 -0.586,1.414c0,4.184 0,13.817 0,18c-0,0.531 0.211,1.04 0.586,1.415c0.375,0.375 0.884,0.585 1.414,0.585l6,0.039" style="fill:none;stroke:#000000;stroke-width:2px;" />
+                        
+                        <path d="M9.004,10l13.983,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-13.983,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1Z" />
+                        
+                        <path d="M9.004,13.994l13.983,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-13.983,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1Z" />
+                        
+                        <path d="M9.004,18l5.981,0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-5.981,0c-0.552,-0 -1,0.448 -1,1c0,0.552 0.448,1 1,1Z" />
+                        
+                        <path d="M9.004,22.006l5.981,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-5.981,-0c-0.552,-0 -1,0.448 -1,1c0,0.552 0.448,1 1,1Z" />
+                        
+                      </g>
+                      
+                    </svg>
+                    
+                  </label>
+                </div>
+              </div>
+              <!-- Lyrics Container -->
+              <div class="lyrics-container">
+                <div class="lyrics">
+                  <!-- Lyrics will be dynamically rendered here -->
+                </div>
+                <div id="annotations-panel" class="annotations-panel">
+                  <button id="close-panel" class="close-panel-btn" aria-label="Close">×</button>
+                  <h3 class="h5 text-primary">Annotation</h3>
+                  <p id="annotation-text" class="text-muted">
+                    Click on a highlighted word or phrase to see its annotation.
+                  </p>
+                </div>
+              </div>
+            </section>
+            
+            <!-- Playlists Section -->
+            <div class="col-md-8">
+              <div class="playlists-container">
+                <h1 class="text-center">Playlists</h1>
+                <div class="badges-container" id="playlist-badges"></div>
+                <div class="playlist-card-container" id="playlist-card"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Album Tracks Section -->
+        <section class="album-tracks bg-white p-4 rounded shadow">
+          <h3 class="h4 text-primary">Other Tracks from "<span id="album-tracks-name">Album Name</span>"</h3>
+          <ul class="list-group" id="other-tracks-list">
+            <li class="list-group-item">
+              <a href="#" class="text-primary track-link" data-album="Valence Eve" data-song="Track 1">Track 1</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="text-primary track-link" data-album="Valence Eve" data-song="Track 2">Track 2</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="text-primary track-link" data-album="Valence Eve" data-song="Track 3">Track 3</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      
+      <!-- Albums List Container -->
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="albums-container">
+              <h1 class="text-center">Albums List</h1>
+              <div class="album-list" id="album-list">
+                <!-- Albums will be dynamically populated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- partial -->
+    
+    <!--========== 
+  Start of bottom page  ==========-->
+    
+    <section class="py-5 bg-pink-gradient">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <h3 class="text-white" id="some-id">
+              I'm here
+              <u class="typer text-warning" data-words="writing,making music," data-delay="100" data-deletedelay="1000" style="color: black;"></u>
+              often.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--========== 
+  End of bottom page  ==========-->
+    
+    <!--========== 
+    Map section ==========-->
+    
+    <!--========== 
+  Start of footer section ==========-->
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 position-relative mb-5 mb-sm-0">
+            <div class="position-absolute top-0 start-0 slice-pt ps-5 ps-lg-8"></div>
+          </div>
+          <div class="col-lg-6"></div>
+        </div>
+      </div>
+    </footer>
+    
+    <footer class="footer bg-black slice-pt">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 offset-lg-2">
+            <h2 class="text-white display-2 mb-4">
+              <span class="typer text-white" id="some-id" data-words="Catch up!" data-delay="100"> </span>
+            </h2>
+            
+            <div class="social-icons icons-xl mt-5">
+              <a class="icon text-white" href="https://youtube.com/@frithhilton17?si=8pEsa1wf1KxLNvBK" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a class="icon text-white" href="https://www.tiktok.com/@frithhilton17" target="_blank">
+                <i class="fab fa-tiktok"></i>
+              </a>
+              <a class="icon text-white" href="https://www.twitter.com/frithhilton17" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+              <a class="icon text-white" href="https://www.instagram.com/frithhilton17" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-7" />
+        <div class="row text-center">
+          <div class="col-12">
+            <div class="developer-footer mb-2">
+              <a href="http://leondev.com.ng" target="_blank"><img src="https://www.frithhilton.com.ng/images/Leondev.png" alt="lEoNDɘv" style="width: 80px !important;" height="80px !important;" /></a>
+            </div>
+            <p class="text-white mt-3 mb-4">
+              © <span id="getFullYear"></span>
+              <span class="text-pink-gradient">Howard Frith Hilton</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!--========== 
+        Start of back to top section ==========-->
+    
+    <div class="go-top">
+      <p class="go-top-text">Scroll to top <i class="fas fa-long-arrow-alt-right ps-2"></i></p>
+    </div>
+    
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  <!--========== 
+        End of back to top section ==========-->
+  
+  <!--========== 
+        Start of Javascript ==========-->
+  
+  <!--===== Global required js =====-->
+  <script src="https://www.frithhilton.com.ng/js/jquery-3.6.0.min.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/popper.min.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/bootstrap/bootstrap.min.js"></script>
+  
+
+  
+  
+  <!--===== Global script: js libraries and plugins =====-->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="https://www.frithhilton.com.ng/js/appear/jquery.appear.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/swiper/swiper.min.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/isotope/isotope.pkgd.min.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/typer/typer.js"></script>
+  <script src="https://www.frithhilton.com.ng/js/mCustomScrollbar/jquery.mCustomScrollbar.min.js"></script>
+  <!--===== Main theme script =====-->
+  <script src="https://www.frithhilton.com.ng/js/functions.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Show the modal on page load
+      $('#popup-container').css('display', 'block').hide().fadeIn();
+      
+      // Dismiss the modal when clicking outside the image
+      $('#popup-container').on('click', function(event) {
+        if (!$(event.target).closest('.image-container').length) {
+          // Clicked outside the image container, dismiss the modal
+          $('#popup-container').fadeOut();
+        }
+      });
+    });
+  </script>
+
+  
+  
+  <script type="module" src="https://www.frithhilton.com.ng/js/freshPlayer/main.js"></script>
+  <script type="module" src="https://www.frithhilton.com.ng/js/freshPlayer/albums.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      /*
+            A NodeList of all your image containers (Or a single Node).
+            The library will locate an <img /> within each
+            container to create the gradient from.
+         */
+      Grade(document.querySelectorAll(".gradient-wrap"));
+    });
+    
+    (function(f) {
+      if (typeof exports === "object" && typeof module !== "undefined") {
+        module.exports = f();
+      } else if (typeof define === "function" && define.amd) {
+        define([], f);
+      } else {
+        var g;
+        if (typeof window !== "undefined") {
+          g = window;
+        } else if (typeof global !== "undefined") {
+          g = global;
+        } else if (typeof self !== "undefined") {
+          g = self;
+        } else {
+          g = this;
+        }
+        g.Grade = f();
+      }
+    })(function() {
+      var define, module, exports;
+      return (function e(t, n, r) {
+        function s(o, u) {
+          if (!n[o]) {
+            if (!t[o]) {
+              var a = typeof require == "function" && require;
+              if (!u && a) return a(o, !0);
+              if (i) return i(o, !0);
+              var f = new Error("Cannot find module '" + o + "'");
+              throw ((f.code = "MODULE_NOT_FOUND"), f);
+            }
+            var l = (n[o] = { exports: {} });
+            t[o][0].call(
+              l.exports,
+              function(e) {
+                var n = t[o][1][e];
+                return s(n ? n : e);
+              },
+              l,
+              l.exports,
+              e,
+              t,
+              n,
+              r
+            );
+          }
+          return n[o].exports;
+        }
+        
+        var i = typeof require == "function" && require;
+        for (var o = 0; o < r.length; o++) s(r[o]);
+        return s;
+      })(
+        {
+          1: [
+            function(require, module, exports) {
+              "use strict";
+              
+              var _createClass = (function() {
+                function defineProperties(target, props) {
+                  for (var i = 0; i < props.length; i++) {
+                    var descriptor = props[i];
+                    descriptor.enumerable = descriptor.enumerable || false;
+                    descriptor.configurable = true;
+                    if ("value" in descriptor) descriptor.writable = true;
+                    Object.defineProperty(target, descriptor.key, descriptor);
+                  }
+                }
+                
+                return function(Constructor, protoProps, staticProps) {
+                  if (protoProps)
+                    defineProperties(Constructor.prototype, protoProps);
+                  if (staticProps) defineProperties(Constructor, staticProps);
+                  return Constructor;
+                };
+              })();
+              
+              function _classCallCheck(instance, Constructor) {
+                if (!(instance instanceof Constructor)) {
+                  throw new TypeError("Cannot call a class as a function");
+                }
+              }
+              
+              var prefixes = ["webkit"];
+              
+              var Grade = (function() {
+                function Grade(container, img_selector, callback) {
+                  _classCallCheck(this, Grade);
+                  
+                  this.callback = callback || null;
+                  this.container = container;
+                  this.image =
+                    this.container.querySelector(img_selector) ||
+                    this.container.querySelector("img");
+                  this.gradientData = [];
+                  if (!this.image || !this.container) {
+                    return;
+                  }
+                  this.canvas = document.createElement("canvas");
+                  this.ctx = this.canvas.getContext("2d");
+                  this.imageDimensions = {
+                    width: 0,
+                    height: 0
+                  };
+                  this.imageData = [];
+                  this.readImage();
+                }
+                
+                _createClass(Grade, [
+                {
+                  key: "readImage",
+                  value: function readImage() {
+                    this.imageDimensions.width = this.image.width * 0.1;
+                    this.imageDimensions.height = this.image.height * 0.1;
+                    this.render();
+                  }
+                },
+                {
+                  key: "getImageData",
+                  value: function getImageData() {
+                    var imageData = this.ctx.getImageData(
+                      0,
+                      0,
+                      this.imageDimensions.width,
+                      this.imageDimensions.height
+                    ).data;
+                    this.imageData = Array.from(imageData);
+                  }
+                },
+                {
+                  key: "getChunkedImageData",
+                  value: function getChunkedImageData() {
+                    var perChunk = 4;
+                    
+                    var chunked = this.imageData.reduce(function(ar, it, i) {
+                      var ix = Math.floor(i / perChunk);
+                      if (!ar[ix]) {
+                        ar[ix] = [];
+                      }
+                      ar[ix].push(it);
+                      return ar;
+                    }, []);
+                    
+                    var filtered = chunked.filter(function(rgba) {
+                      return (
+                        rgba.slice(0, 2).every(function(val) {
+                          return val < 250;
+                        }) &&
+                        rgba.slice(0, 2).every(function(val) {
+                          return val > 0;
+                        })
+                      );
+                    });
+                    
+                    return filtered;
+                  }
+                },
+                {
+                  key: "getRGBAGradientValues",
+                  value: function getRGBAGradientValues(top) {
+                    return top
+                      .map(function(color, index) {
+                        return (
+                          "rgb(" +
+                          color.rgba.slice(0, 3).join(",") +
+                          ") " +
+                          (index === 0 ? "0%" : "100%")
+                        );
+                      })
+                      .join(",");
+                  }
+                },
+                {
+                  key: "getCSSGradientProperty",
+                  value: function getCSSGradientProperty(top) {
+                    const top1 = [top[1]];
+                    var val1 = this.getRGBAGradientValues(top1);
+                    const val2 = val1 + ",rgb(0,0,0) 100%";
+                    return prefixes
+                      .map(function(prefix) {
+                        return (
+                          "background-image: -" +
+                          prefix +
+                          "-linear-gradient(\n 180deg,\n" +
+                          val2 +
+                          "\n)"
+                        );
+                      })
+                      .concat([
+                        "background-image: linear-gradient(\n180deg,\n" +
+                        val2 +
+                        "\n)"
+                      ])
+                      .join(";");
+                  }
+                },
+                {
+                  key: "getMiddleRGB",
+                  value: function getMiddleRGB(start, end) {
+                    var w = 0.5 * 2 - 1;
+                    var w1 = (w + 1) / 2.0;
+                    var w2 = 1 - w1;
+                    var rgb = [
+                      parseInt(start[0] * w1 + end[0] * w2),
+                      parseInt(start[1] * w1 + end[1] * w2),
+                      parseInt(start[2] * w1 + end[2] * w2)
+                    ];
+                    return rgb;
+                  }
+                },
+                {
+                  key: "getSortedValues",
+                  value: function getSortedValues(uniq) {
+                    var occurs = Object.keys(uniq)
+                      .map(function(key) {
+                        var rgbaKey = key;
+                        var components = key.split("|"),
+                          brightness =
+                          (components[0] * 299 +
+                            components[1] * 587 +
+                            components[2] * 114) /
+                          1000;
+                        return {
+                          rgba: rgbaKey.split("|"),
+                          occurs: uniq[key],
+                          brightness: brightness
+                        };
+                      })
+                      .sort(function(a, b) {
+                        return a.occurs - b.occurs;
+                      })
+                      .reverse()
+                      .slice(0, 10);
+                    return occurs
+                      .sort(function(a, b) {
+                        return a.brightness - b.brightness;
+                      })
+                      .reverse();
+                  }
+                },
+                {
+                  key: "getTextProperty",
+                  value: function getTextProperty(top) {
+                    var rgb = this.getMiddleRGB(
+                      top[0].rgba.slice(0, 3),
+                      top[1].rgba.slice(0, 3)
+                    );
+                    var o = Math.round(
+                      (parseInt(rgb[0]) * 299 +
+                        parseInt(rgb[1]) * 587 +
+                        parseInt(rgb[2]) * 114) /
+                      1000
+                    );
+                    if (o > 125) {
+                      return "color: #000";
+                    } else {
+                      return "color: #fff";
+                    }
+                  }
+                },
+                {
+                  key: "getTopValues",
+                  value: function getTopValues(uniq) {
+                    var sorted = this.getSortedValues(uniq);
+                    return [sorted[0], sorted[sorted.length - 1]];
+                  }
+                },
+                {
+                  key: "getUniqValues",
+                  value: function getUniqValues(chunked) {
+                    return chunked.reduce(function(accum, current) {
+                      var key = current.join("|");
+                      if (!accum[key]) {
+                        accum[key] = 1;
+                        return accum;
+                      }
+                      accum[key] = ++accum[key];
+                      return accum;
+                    }, {});
+                  }
+                },
+                {
+                  key: "renderGradient",
+                  value: function renderGradient() {
+                    var ls = window.localStorage;
+                    var item_name = "grade-" + this.image.getAttribute("src");
+                    var top = null;
+                    
+                    if (ls && ls.getItem(item_name)) {
+                      top = JSON.parse(ls.getItem(item_name));
+                    } else {
+                      var chunked = this.getChunkedImageData();
+                      top = this.getTopValues(this.getUniqValues(chunked));
+                      
+                      if (ls) {
+                        ls.setItem(item_name, JSON.stringify(top));
+                      }
+                    }
+                    
+                    if (this.callback) {
+                      this.gradientData = top;
+                      return;
+                    }
+                    
+                    var gradientProperty = this.getCSSGradientProperty(top);
+                    
+                    var textProperty = this.getTextProperty(top);
+                    
+                    var style =
+                      (this.container.getAttribute("style") || "") +
+                      "; " +
+                      gradientProperty +
+                      "; " +
+                      textProperty;
+                    this.container.setAttribute("style", style);
+                  }
+                },
+                {
+                  key: "render",
+                  value: function render() {
+                    this.canvas.width = this.imageDimensions.width;
+                    this.canvas.height = this.imageDimensions.height;
+                    this.ctx.drawImage(
+                      this.image,
+                      0,
+                      0,
+                      this.imageDimensions.width,
+                      this.imageDimensions.height
+                    );
+                    this.getImageData();
+                    this.renderGradient();
+                  }
+                }]);
+                
+                return Grade;
+              })();
+              
+              module.exports = function(containers, img_selector, callback) {
+                var init = function init(container, img_selector, callback) {
+                  var grade = new Grade(container, img_selector, callback),
+                    gradientData = grade.gradientData;
+                  if (!gradientData.length) {
+                    return null;
+                  }
+                  return {
+                    element: container,
+                    gradientData: gradientData
+                  };
+                };
+                var results = (NodeList.prototype.isPrototypeOf(containers) ?
+                  Array.from(containers).map(function(container) {
+                    return init(container, img_selector, callback);
+                  }) : [init(containers, img_selector, callback)]
+                ).filter(Boolean);
+                
+                if (results.length) {
+                  return callback(results);
+                }
+              };
+            },
+            {}
+          ]
+        }, {},
+        [1]
+      )(1);
+    });
+  </script>
+  
+  <!--========== 
+        End of Javascript ==========-->
+</body>
+
+</html>
