@@ -43,18 +43,26 @@ jobs:
           show-progress: false  # Hide progress logs for minor I/O savings
           # Partial clone: Fetch structure only, blobs (files) on-demand during upload
           filter: blob:none
-          # Sparse checkout: Fetch only static essentials (adjust paths as needed)
-          sparse-checkout-cone-mode: true
-          sparse-checkout: |  # Multiline paths: Enables sparse + lists files/dirs (omits bloat like node_modules/)
+          # Sparse checkout: Non-cone mode for patterns (allows globs like *.html)
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |  # Safe patterns: Root files + common static (adjust based on your repo)
             *
-            .github/
             *.html
             *.css
             *.js
-            assets/
-            css/
-            js/
-            img/
+            */  # All immediate subdirs (e.g., css/, js/, img/)
+
+      # Debug: List repo structure (run once, then remove this step after checking logs)
+      - name: Debug repo structure
+        run: |
+          echo "=== Root files ==="
+          ls -la .
+          echo "=== Subdirs (top level) ==="
+          find . -maxdepth 1 -type d
+          echo "=== File count ==="
+          find . -type f | wc -l
+          echo "=== Repo size ==="
+          du -sh .
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
