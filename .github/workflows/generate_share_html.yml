@@ -1,4 +1,4 @@
-name: Generate Poems
+name: Generate Poems HTML
 
 on:
   workflow_dispatch:  # Only allows manual triggering from the Actions tab
